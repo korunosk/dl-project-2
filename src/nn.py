@@ -14,6 +14,28 @@ class Module:
         raise NotImplementedError
 
 
+class Sequential(Module):
+    
+    def __init__(self, *layers):
+        self.layers = layers
+    
+    def forward(self, input):
+        for layer in self.layers:
+            input = layer.forward(input)
+        return input
+    
+    def backward(self, output):
+        for layer in reversed(self.layers):
+            output = layer.backward(output)
+        return output
+    
+    def parameters(self):
+        parameters = []
+        for layer in self.layers:
+            parameters.extend(layer.parameters())
+        return parameters
+
+
 class Linear(Module):
 
     def __accumulate_gradients(self, input, delta):
@@ -110,28 +132,6 @@ class Relu(Module):
     
     def parameters(self):
         return []
-
-
-class Sequential(Module):
-    
-    def __init__(self, *layers):
-        self.layers = layers
-    
-    def forward(self, input):
-        for layer in self.layers:
-            input = layer.forward(input)
-        return input
-    
-    def backward(self, output):
-        for layer in reversed(self.layers):
-            output = layer.backward(output)
-        return output
-    
-    def parameters(self):
-        parameters = []
-        for layer in self.layers:
-            parameters.extend(layer.parameters())
-        return parameters
 
 
 class LossMSE(Module):
