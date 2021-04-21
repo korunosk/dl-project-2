@@ -3,14 +3,18 @@ from matplotlib import pyplot as plt
 
 
 def plot_loss_accuracy(loss, accuracy):
+    fig, ax = plt.subplots()
+
     x, y = zip(*loss)
-    plt.plot(x, y, label='loss (train)')
+    ax.plot(x, y, label='loss (train)')
    
     x,  y = zip(*accuracy)
-    plt.plot(x, y, '-x', label='accuracy (test)')
+    ax.plot(x, y, '-x', label='accuracy (test)')
    
-    plt.legend()
-    plt.show()
+    ax.set_xlabel('iteration')
+    ax.legend()
+    
+    plt.savefig('img/loss-accuracy.png', bbox_layout='tight')
 
 
 def plot_decision_bountary(model, X_, y_):
@@ -31,10 +35,15 @@ def plot_decision_bountary(model, X_, y_):
     
         return x, y, z
 
+    fig, ax = plt.subplots()
+
     x, y, z = make_contourf()
-    plt.contourf(x, y, z)
+    ax.contourf(x, y, z)
 
     x, y, z = X_[:,0], X_[:,1], y_[:,0]
-    plt.scatter(x, y, c=z, s=1)
+    ax.scatter(x, y, c=z, s=1)
 
-    plt.show()
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
+
+    plt.savefig('img/decision-boundary.png', bbox_layout='tight')
