@@ -1,8 +1,8 @@
 import torch
-import dataset
-import nn
-import optim
-import viz
+import src.dataset as dataset
+import src.nn as nn
+import src.optim as optim
+import src.viz as viz
 
 torch.set_grad_enabled(False)
 
