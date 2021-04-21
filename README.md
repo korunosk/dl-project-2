@@ -11,17 +11,17 @@
 ## Project Structure
 
 ```
-├── README.md						# Readme file
+├── README.md                       # Readme file
 ├── img
-│   ├── decision-boundary.png		# Decision boundary plot
-│   └── loss-accuracy.png			# Loss vs. accuracy plot
+│   ├── decision-boundary.png       # Decision boundary plot
+│   └── loss-accuracy.png           # Loss vs. accuracy plot
 ├── main.py
 └── src
     ├── __init__.py
-    ├── dataset.py					# Dataset generation code
-    ├── nn.py						# Models, activations, and losses
-    ├── optim.py					# Optimization modules
-    └── viz.py						# Visualization methods
+    ├── dataset.py                  # Dataset generation code
+    ├── nn.py                       # Models, activations, and losses
+    ├── optim.py                    # Optimization modules
+    └── viz.py                      # Visualization methods
 ```
 
 ## Authors
