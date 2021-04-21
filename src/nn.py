@@ -162,7 +162,7 @@ class LossMSE(Module):
 class LossBCE(Module):
 
     def __bce(self, target, prediction):
-        return (target * torch.log(prediction) + (1 - target) * torch.log(1 - prediction)).mean()
+        return (target * torch.log(prediction) + (1 - target) * torch.log(1 - prediction)).mean(dim=0)
     
     def __bce_prime(self, target, prediction):
         return - (target / prediction - (1 - target) / (1 - prediction))
