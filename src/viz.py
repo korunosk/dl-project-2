@@ -3,6 +3,8 @@ from matplotlib import pyplot as plt
 
 
 def plot_loss_accuracy(loss, accuracy):
+    ''' Plots loss vs. accuracy curves '''
+
     fig, ax = plt.subplots()
 
     x, y = zip(*loss)
@@ -18,6 +20,8 @@ def plot_loss_accuracy(loss, accuracy):
 
 
 def plot_decision_bountary(model, X_, y_):
+    '''' Plots decision boundary '''
+    
     def make_contourf():
         N = 1000
 

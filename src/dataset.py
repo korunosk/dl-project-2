@@ -3,6 +3,18 @@ import torch
 
 
 def gen_dataset(N):
+    ''' Generates an artifical dataset.
+
+    Parameters
+    ----------
+    N: int
+        Number of samples
+    
+    Returns
+    -------
+    tuple (torch.tensor, torch.tensor)
+        Data and labels
+    '''
     center = torch.tensor([0.5, 0.5])
     radius = torch.tensor(1 / math.sqrt(2 * math.pi))
 
