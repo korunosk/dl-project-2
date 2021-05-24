@@ -1,5 +1,13 @@
 # [EE-559] Project 2 - Mini Deep-Learning Framework
 
+## Authors
+
+| Student's name     | SCIPER |
+| ------------------ | ------ |
+| Mladen Korunoski   | 309531 |
+| Ljupche Milosheski | 308507 |
+| Dragoljub Djuric   | 309397 |
+
 ## Prerequisites
 
 ### Libraries
@@ -23,8 +31,3 @@
     ├── optim.py                    # Optimization modules
     └── viz.py                      # Visualization methods
 ```
-
-## Authors
-
-- Mladen Korunoski mladen.korunoski@epfl.ch
-- Ljupche Milosheski ljupche.milosheski@epfl.ch
