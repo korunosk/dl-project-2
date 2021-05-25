@@ -23,7 +23,7 @@
 ├── img
 │   ├── decision-boundary.png       # Decision boundary plot
 │   └── loss-accuracy.png           # Loss vs. accuracy plot
-├── main.py
+├── test.py
 └── src
     ├── __init__.py
     ├── dataset.py                  # Dataset generation code
