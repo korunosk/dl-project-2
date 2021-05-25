@@ -5,16 +5,22 @@ from matplotlib import pyplot as plt
 def plot_loss_accuracy(loss, accuracy):
     ''' Plots loss vs. accuracy curves '''
 
-    fig, ax = plt.subplots()
+    fig, ax1 = plt.subplots()
 
+    color = 'tab:purple'
     x, y = zip(*loss)
-    ax.plot(x, y, label='loss (train)')
+    ax1.plot(x, y, color=color)
+    ax1.set_xlabel('iteration')
+    ax1.set_ylabel('loss (train)', color=color)
+    ax1.tick_params(axis='y', labelcolor=color)
    
+    ax2 = ax1.twinx()
+
+    color = 'tab:olive'
     x,  y = zip(*accuracy)
-    ax.plot(x, y, '-x', label='accuracy (test)')
-   
-    ax.set_xlabel('iteration')
-    ax.legend()
+    ax2.plot(x, y, '-x', color=color)
+    ax2.set_ylabel('accuracy (test)', color=color)
+    ax2.tick_params(axis='y', labelcolor=color)
     
     plt.savefig('img/loss-accuracy.png', bbox_layout='tight')
 
